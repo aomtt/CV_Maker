@@ -1,0 +1,317 @@
+@font-face {
+    font-family: verelaR;
+    src: url(VarelaRound-Regular.ttf);
+}
+
+@font-face {
+    font-family: latoR;
+    src: url(Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: albulaR;
+    src: url(Albula-Light.ttf);
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-family: 'verelaR', sans-serif;
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 48px;
+}
+
+p {
+    font-family: 'latoR', sans-serif;
+    letter-spacing: 1px;
+    font-size: 14px;
+    color: #333333;
+}
+
+.header {
+    position: relative;
+    text-align: center;
+    background: linear-gradient(90deg, #543ab7, #1b53c7, #0067d1, #0078d4, #0087d3, #0094ce, #00a1c7, #00acc1);
+    color: white;
+}
+
+.top-header {
+    height: 0;
+}
+
+.header-button-om {
+    position: relative;
+    top: 30px;
+    left: 36.50%;
+
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    
+
+    font-family: 'albulaR', al;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.header-button-om::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: white;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+.header-button-om:hover {
+    color: white;
+  }
+.header-button-om:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+.header-button-pris {
+    position: relative;
+    top: 30px;
+    left: 38%;
+
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    font-family: 'albulaR', al;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.header-button-pris::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: white;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+.header-button-pris:hover {
+    color: white;
+  }
+.header-button-pris:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+.header-button-log {
+    position: relative;
+    top: 30px;
+    left: 39.50%;
+
+    border: none;
+    background: none;
+
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    font-family: 'albulaR', al;
+    color: white;
+    letter-spacing: 1px;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.header-button-log::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 3px;
+    top: 100%;
+    left: 0;
+    background: white;
+    transition: transform 0.5s;
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+.header-button-log:hover {
+    color: white;
+  }
+.header-button-log:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+.div-button {
+    position: relative;
+    bottom: 200px;
+}
+
+.logo {
+    width: 50px;
+    fill: white;
+    padding-right: 15px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.inner-header {
+    height: 65vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.flex {
+    /*Flexbox for containers*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    /*Fix for safari gap*/
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.content {
+    position: relative;
+    height: 20vh;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+
+.draw-border {
+    box-shadow: inset 0 0 0 4px #ffffff;
+    color: #ffffff;
+    transition: color 0.25s 0.0833333333s;
+    position: relative;
+  }
+  .draw-border::before, .draw-border::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .draw-border::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px;
+  }
+  .draw-border::after {
+    border-top-width: 4px;
+    border-right-width: 4px;
+  }
+  .draw-border:hover {
+    color: white;
+  }
+  .draw-border:hover::before, .draw-border:hover::after {
+    border-color: #00D775;
+    transition: border-color 0s, width 0.25s, height 0.25s;
+    width: 100%;
+    height: 100%;
+  }
+  .draw-border:hover::before {
+    transition-delay: 0s, 0s, 0.25s;
+  }
+  .draw-border:hover::after {
+    transition-delay: 0s, 0.25s, 0s;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    line-height: 1.5;
+    font: 700 1.2rem "Roboto Slab", sans-serif;
+    padding: 1em 2em;
+    letter-spacing: 0.05rem;
+  }
+  .btn:focus {
+    outline: 2px dotted #55d7dc;
+  }
+  
+
+
+/* Animation */
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+
+/*Shrinking for mobile*/
+
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}

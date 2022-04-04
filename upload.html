@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Foto</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="uploading.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="jquery.storage.js"></script>
+</head>
+
+
+
+
+<body>
+    <script>
+        let counter = 0;
+
+
+        // This runs every x seconds and checks if a file have been uplaoded. If yes it prints "lets go"
+        myInt = setInterval(function () {
+            x = document.getElementById("file-input");
+            var files = x.files;
+
+            var preview = document.querySelector('img');
+            var file = document.querySelector('input[type=file]').files[0];
+            var reader = new FileReader();
+
+            reader.onloadend = function () {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = "";
+            }
+
+            if (files.length != 0) {
+                /*
+                var s = document.createElement('script');
+                s.setAttribute('type', 'text/javascript');
+                s.innerHTML = nString;
+                document.getElementById('jesus').appendChild(s);
+                */
+
+                if (counter == 0) {
+                    console.log("Do nothing");
+                    counter = counter + 1;
+                } else {
+                    $.sessionStorage('chosenImg', document.getElementById("photoImg").src);
+                    console.log("chosenImg have been send on to the next html page with source: " + document.getElementById("photoImg").src);
+                    clearInterval(myInt);
+                    window.location.href = "upload_crop.html";
+                }
+                
+            } else {
+                console.log("not lets go");
+            }
+        }, 200);
+
+    </script>
+
+
+
+    <div class="container">
+        <div class="panel">
+            <div class="panel-header">
+                <h1 class="panel-header-title">Upload dit billede
+                    <h1 />
+                    <a href="#" class="btn" id="btn">
+                        <div class="image-upload">
+                            <label for="file-input">
+                                <div class="jss142">
+                                    <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="1920.000000pt"
+                                        height="1920.000000pt" viewBox="0 0 1920.000000 1920.000000"
+                                        preserveAspectRatio="xMidYMid meet">
+                                        <metadata>
+                                            Created by potrace 1.16, written by Peter Selinger 2001-2019
+                                        </metadata>
+                                        <g transform="translate(0.000000,1920.000000) scale(0.100000,-0.100000)"
+                                            fill="#000000" stroke="none">
+                                            <path fill="#808080" d="M4930 13268 c-53 -15 -96 -53 -114 -100 -15 -39 -16 -349 -14 -3585
+l3 -3541 31 -39 c17 -21 46 -46 65 -55 32 -17 244 -18 4002 -18 3328 0 3973 2
+4000 14 40 16 81 64 97 111 26 78 -16 172 -94 209 -31 15 -346 16 -3895 16
+l-3861 0 2 3320 c2 1826 6 3320 11 3320 4 0 1836 0 4072 0 l4065 0 2 -2347 3
+-2348 21 -35 c55 -95 181 -118 261 -47 68 60 63 -147 63 2545 l0 2448 -22 44
+c-27 52 -60 78 -114 90 -56 13 -8538 11 -8584 -2z" />
+                                            <path fill="#808080" d="M5985 12371 c-46 -21 -79 -54 -94 -94 -8 -20 -11 -709 -11 -2278 0
+-2229 0 -2250 20 -2289 12 -24 37 -49 63 -65 l44 -25 3230 2 3230 3 35 27 c19
+15 44 44 54 65 18 37 19 101 19 2288 l0 2250 -23 40 c-13 22 -39 52 -59 65
+l-37 25 -3215 2 c-3110 3 -3217 2 -3256 -16z m6235 -1998 l-1 -1668 -31 35
+c-17 19 -65 71 -107 115 -162 169 -878 922 -921 969 -25 26 -62 57 -82 67 -46
+23 -112 24 -155 1 -30 -16 -283 -252 -745 -694 -108 -103 -200 -188 -205 -188
+-4 0 -119 105 -254 233 -135 127 -477 450 -760 716 -283 267 -547 516 -586
+555 -88 84 -116 103 -164 111 -69 12 -106 -8 -254 -136 -317 -274 -583 -505
+-1005 -869 -384 -331 -611 -528 -697 -604 l-23 -19 0 1521 0 1522 2995 0 2995
+0 0 -1667z m-3714 -468 c175 -165 357 -336 403 -380 47 -44 169 -159 271 -255
+102 -97 302 -285 445 -420 143 -134 303 -285 355 -335 52 -50 129 -122 170
+-161 97 -91 247 -232 335 -316 l70 -68 -2162 0 -2163 0 0 283 0 282 193 166
+c185 160 294 254 1232 1065 237 205 448 388 470 408 22 19 45 34 52 33 6 -1
+155 -137 329 -302z m2595 -532 c163 -168 286 -297 705 -738 213 -225 394 -414
+401 -418 9 -6 13 -42 13 -127 l0 -120 -577 1 -578 0 -414 393 c-228 216 -415
+395 -415 398 -1 5 233 230 619 596 71 67 132 122 136 122 3 0 53 -48 110 -107z" />
+                                            <path fill="#808080" d="M9930 11466 c-150 -32 -257 -92 -358 -200 -75 -81 -114 -145 -149
+-251 -23 -69 -27 -96 -26 -200 0 -103 4 -131 27 -200 132 -390 560 -566 934
+-383 96 47 227 178 277 277 193 386 -6 836 -418 947 -78 21 -212 26 -287 10z
+m242 -364 c111 -49 188 -164 188 -279 0 -174 -133 -313 -300 -313 -89 0 -149
+22 -210 77 -76 68 -104 129 -104 228 -1 62 4 91 21 127 38 83 126 155 218 179
+47 12 138 3 187 -19z" />
+                                            <path fill="#808080" d="M13395 7726 c-79 -48 -79 -51 -85 -401 l-5 -310 -310 -5 c-297 -5
+-312 -6 -345 -27 -104 -65 -103 -221 3 -291 l40 -27 309 -3 308 -3 0 -296 c0
+-280 1 -299 21 -340 63 -130 251 -129 310 1 17 37 19 70 19 339 l0 297 289 0
+c298 0 328 3 385 43 34 24 65 89 66 136 0 55 -36 118 -84 146 l-43 25 -306 0
+-306 0 -3 313 -3 314 -25 37 c-51 76 -156 99 -235 52z" />
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p class="upload-p">Upload et foto</p>
+                            </label>
+                            <input id="file-input" type="file" hidden />
+                        </div>
+                    </a>
+            </div>
+        </div>
+    </div>
+
+    <img src="" id="photoImg" height="200" alt="Image preview...">
+
+
+
+
+</body>
+
+</html>
