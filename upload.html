@@ -6,10 +6,10 @@
     <title>Foto</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="uploading.css">
+    <link rel="stylesheet" href="Styles/uploading.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="jquery.storage.js"></script>
+    <script src="Libraries/jquery.storage.js"></script>
 </head>
 
 
@@ -21,7 +21,7 @@
 
 
         // This runs every x seconds and checks if a file have been uplaoded. If yes it prints "lets go"
-        myInt = setInterval(function () {
+        myInt = setInterval(function() {
             x = document.getElementById("file-input");
             var files = x.files;
 
@@ -29,7 +29,7 @@
             var file = document.querySelector('input[type=file]').files[0];
             var reader = new FileReader();
 
-            reader.onloadend = function () {
+            reader.onloadend = function() {
                 preview.src = reader.result;
             }
 
@@ -56,12 +56,11 @@
                     clearInterval(myInt);
                     window.location.href = "upload_crop.html";
                 }
-                
+
             } else {
                 console.log("not lets go");
             }
         }, 200);
-
     </script>
 
 

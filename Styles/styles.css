@@ -1,16 +1,16 @@
 @font-face {
     font-family: verelaR;
-    src: url(VarelaRound-Regular.ttf);
+    src: url(Fonts/VarelaRound-Regular.ttf);
 }
 
 @font-face {
     font-family: latoR;
-    src: url(Lato-Regular.ttf);
+    src: url(Fonts/Lato-Regular.ttf);
 }
 
 @font-face {
     font-family: albulaR;
-    src: url(Albula-Light.ttf);
+    src: url(Fonts/Albula-Light.ttf);
 }
 
 body {
@@ -46,14 +46,11 @@ p {
     position: relative;
     top: 30px;
     left: 36.50%;
-
     border: none;
     background: none;
     margin: 0;
     padding: 0;
     cursor: pointer;
-    
-
     font-family: 'albulaR', al;
     color: white;
     letter-spacing: 1px;
@@ -72,26 +69,26 @@ p {
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
-  }
+}
+
 .header-button-om:hover {
     color: white;
-  }
+}
+
 .header-button-om:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-  }
+}
 
 .header-button-pris {
     position: relative;
     top: 30px;
     left: 38%;
-
     border: none;
     background: none;
     margin: 0;
     padding: 0;
     cursor: pointer;
-
     font-family: 'albulaR', al;
     color: white;
     letter-spacing: 1px;
@@ -110,27 +107,26 @@ p {
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
-  }
+}
+
 .header-button-pris:hover {
     color: white;
-  }
+}
+
 .header-button-pris:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-  }
+}
 
 .header-button-log {
     position: relative;
     top: 30px;
     left: 39.50%;
-
     border: none;
     background: none;
-
     margin: 0;
     padding: 0;
     cursor: pointer;
-
     font-family: 'albulaR', al;
     color: white;
     letter-spacing: 1px;
@@ -149,14 +145,16 @@ p {
     transition: transform 0.5s;
     transform: scaleX(0);
     transform-origin: right;
-  }
+}
+
 .header-button-log:hover {
     color: white;
-  }
+}
+
 .header-button-log:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-  }
+}
 
 .div-button {
     position: relative;
@@ -203,16 +201,15 @@ p {
     background-color: white;
 }
 
-
-
-
 .draw-border {
     box-shadow: inset 0 0 0 4px #ffffff;
     color: #ffffff;
     transition: color 0.25s 0.0833333333s;
     position: relative;
-  }
-  .draw-border::before, .draw-border::after {
+}
+
+.draw-border::before,
+.draw-border::after {
     border: 0 solid transparent;
     box-sizing: border-box;
     content: "";
@@ -222,32 +219,39 @@ p {
     height: 0;
     bottom: 0;
     right: 0;
-  }
-  .draw-border::before {
+}
+
+.draw-border::before {
     border-bottom-width: 4px;
     border-left-width: 4px;
-  }
-  .draw-border::after {
+}
+
+.draw-border::after {
     border-top-width: 4px;
     border-right-width: 4px;
-  }
-  .draw-border:hover {
+}
+
+.draw-border:hover {
     color: white;
-  }
-  .draw-border:hover::before, .draw-border:hover::after {
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
     border-color: #00D775;
     transition: border-color 0s, width 0.25s, height 0.25s;
     width: 100%;
     height: 100%;
-  }
-  .draw-border:hover::before {
+}
+
+.draw-border:hover::before {
     transition-delay: 0s, 0s, 0.25s;
-  }
-  .draw-border:hover::after {
+}
+
+.draw-border:hover::after {
     transition-delay: 0s, 0.25s, 0s;
-  }
-  
-  .btn {
+}
+
+.btn {
     background: none;
     border: none;
     cursor: pointer;
@@ -255,11 +259,11 @@ p {
     font: 700 1.2rem "Roboto Slab", sans-serif;
     padding: 1em 2em;
     letter-spacing: 0.05rem;
-  }
-  .btn:focus {
+}
+
+.btn:focus {
     outline: 2px dotted #55d7dc;
-  }
-  
+}
 
 
 /* Animation */
@@ -292,7 +296,6 @@ p {
     0% {
         transform: translate3d(-90px, 0, 0);
     }
-
     100% {
         transform: translate3d(85px, 0, 0);
     }
@@ -306,11 +309,9 @@ p {
         height: 40px;
         min-height: 40px;
     }
-
     .content {
         height: 30vh;
     }
-
     h1 {
         font-size: 24px;
     }

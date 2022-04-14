@@ -6,10 +6,10 @@
     <title>Foto</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="uploading2.css">
+    <link rel="stylesheet" href="Styles/uploading2.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="jquery.storage.js"></script>
+    <script src="Libraries/jquery.storage.js"></script>
 </head>
 
 
@@ -22,8 +22,7 @@
     <script>
         const dImg = new Image();
         let nImg = $.sessionStorage('chosenImg')
-        dImg.onload = function () {
-        }
+        dImg.onload = function() {}
         dImg.src = nImg;
 
         canvas = document.getElementById("c");
@@ -63,7 +62,6 @@
         }
 
         function setup() {
-
             bb = false;
             cc = 4;
             cc2 = 4;
@@ -134,8 +132,27 @@
             cc = 0;
 
             let arr = img.get(finalx - 100, finaly - 100, sizeX, sizeY);
+            console.log(typeof(arr));
+            /*
+            let inz = createImg(
+                img,
+                'the p5 magenta asterisk'
+            );
+            inz.position(0, -10);
+            console.log(inz);
+            */
+
+            // The image converted to a base64 string, which we can then use later on to recover the image. 
+            let Base64Picture_Cropped = arr.canvas.toDataURL();
+            console.log(Base64Picture_Cropped);
+
+            $.sessionStorage('croppedImgBase64', Base64Picture_Cropped);
+
+
+            console.log($.sessionStorage("croppedImgBase64"));
             arr.save("arr", "png");
         }
     </script>
 </body>
+
 </html>

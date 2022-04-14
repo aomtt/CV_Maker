@@ -1,12 +1,14 @@
 @font-face {
     font-family: albula;
-    src: url(Albula-Light.ttf);
+    src: url(Fonts/Albula-Light.ttf);
 }
 
 body {
     background-image: linear-gradient(0deg, #52E5E7 5%, #130CB7 100%);
     font-family: albula, helvetica;
-    margin: 0; height: 100%; overflow: hidden
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
 
 .container {
@@ -14,9 +16,9 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-  }
-  
-  .panel {
+}
+
+.panel {
     background-color: #FFF;
     max-width: 34rem;
     display: flex;
@@ -25,23 +27,20 @@ body {
     border-radius: 0.5rem;
     box-shadow: 0.75rem 0.75rem 1.75rem 0 rgba(0, 0, 0, 0.25);
     margin: 10px;
-  }
+}
 
-  .panel-header {
+.panel-header {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
+}
 
-  
 .panel-header-title {
-  
     font-size: 1.75rem;
-    
-  }
-  
-  .jss142 {
+}
+
+.jss142 {
     width: 148px;
     height: 148px;
     display: flex;
@@ -63,32 +62,30 @@ body {
     font-family: albula, helvetica;
 }
 
-
 .container {
-  margin: 20px auto;
-  max-width: 640px;
+    margin: 20px auto;
+    max-width: 640px;
 }
 
 img {
-  max-width: 100%;
-  position: relative; 
-  left: 40%;
+    max-width: 100%;
+    position: relative;
+    left: 40%;
 }
 
 .cropper-view-box,
 .cropper-face {
-  border-radius: 50%;
+    border-radius: 50%;
 }
 
-  
-
 label {
-  background-color: indigo;
-  color: grey;
-  font-family: sans-serif;
-  border-radius: 0.3rem;
-  cursor: pointer;
-  /*background-color: rgba(0,0,0,0);*/
-  min-height: 500px;
-  min-width: 500px;;
+    background-color: indigo;
+    color: grey;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    /*background-color: rgba(0,0,0,0);*/
+    min-height: 500px;
+    min-width: 500px;
+    ;
 }

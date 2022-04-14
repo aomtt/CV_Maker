@@ -1,11 +1,12 @@
 @font-face {
     font-family: albula;
-    src: url(Albula-Light.ttf);
+    src: url(Fonts/Albula-Light.ttf);
 }
 
 body {
     background-image: linear-gradient(100deg, #52E5E7 5%, #130CB7 100%);
     font-family: albula, helvetica;
-    margin: 0; height: 100%; overflow: hidden
+    margin: 0;
+    height: 100%;
+    overflow: hidden
 }
-
