@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Kontaktoplysninger</title>
+    <title>Resumeoplysninger</title>
     <link rel="stylesheet" href="Styles/opret1.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 </head>
@@ -16,24 +17,24 @@
     <div class="container">
         <div class="panel">
             <div class="panel-header">
-                <h1 class="panel-header-title">Indsæt kontaktoplysninger
+                <h1 class="panel-header-title">Indsæt resumeoplysninger
                     <h1 />
             </div>
             <form class="form" action="javascript:void(0);">
                 <div class="input">
-                    <label class="input-label">Fulde navn</label>
-                    <input id="name" type="name" class="input-field" />
+                    <label class="input-label">Fortæl lidt om dig selv (maks 500 tegn)</label>
+                    <input id="name" type="name" class="name" />
                 </div>
                 <div class="input">
-                    <label class="input-label">E-mail</label>
+                    <label class="input-label">Uddanelser</label>
                     <input id="mail" type="email" class="input-field" />
                 </div>
                 <div class="input">
-                    <label class="input-label">Telefonnummer</label>
+                    <label class="input-label">Jobs/praktik</label>
                     <input id="phone" type="telefonnummer" class="input-field" />
                 </div>
                 <div class="input">
-                    <label class="input-label">Adresse</label>
+                    <label class="input-label">Sprog</label>
                     <input id="adress" type="adressse" class="input-field" />
                 </div>
                 <div class="input">
@@ -45,7 +46,7 @@
                     <input id="demo" type="by" class="input-field" />
                 </div>
                 <div class="input">
-                    <a class="input-submit" href="opret2.html" class="button" onclick="myFunction()">Videre</a>
+                    <a id="input-submit" class="input-submit" href="#" onclick="myFunction()">Videre</a>
 
                 </div>
             </form>
@@ -53,7 +54,33 @@
     </div>
 
     <script>
+        $("#name").replaceWith('<textarea id="name" class="name"></textarea>');
+    </script>
+
+    <script>
+        $('#input-submit').click(function(ev) {
+            // do whatever you want here
+
+            var navn = document.getElementById("name").value;
+            var mail = document.getElementById("mail").value;
+            var phone = document.getElementById("phone").value;
+            var adress = document.getElementById("adress").value;
+            var postal = document.getElementById("postal").value;
+            var by = document.getElementById("demo").value;
+
+            console.log(navn);
+            console.log(mail);
+            console.log(phone);
+            console.log(adress);
+            console.log(postal);
+            console.log(by);
+
+            ev.preventDefault();
+            ev.stopPropagation();
+        });
+
         function myFunction() {
+            console.log(">Hello");
             var navn = document.getElementById("name").value;
             var mail = document.getElementById("mail").value;
             var phone = document.getElementById("phone").value;
