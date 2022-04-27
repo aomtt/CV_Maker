@@ -10,3 +10,17 @@ body {
     height: 100%;
     overflow: hidden
 }
+
+.image-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.base64image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
