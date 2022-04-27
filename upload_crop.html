@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Foto</title>
+    <title>Crop Image</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Styles/uploading2.css">
@@ -133,24 +133,15 @@
 
             let arr = img.get(finalx - 100, finaly - 100, sizeX, sizeY);
             console.log(typeof(arr));
-            /*
-            let inz = createImg(
-                img,
-                'the p5 magenta asterisk'
-            );
-            inz.position(0, -10);
-            console.log(inz);
-            */
 
             // The image converted to a base64 string, which we can then use later on to recover the image. 
             let Base64Picture_Cropped = arr.canvas.toDataURL();
-            console.log(Base64Picture_Cropped);
 
             $.sessionStorage('croppedImgBase64', Base64Picture_Cropped);
 
 
             console.log($.sessionStorage("croppedImgBase64"));
-            arr.save("arr", "png");
+            //arr.save("arr", "png");
         }
     </script>
 </body>
