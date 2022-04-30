@@ -14,25 +14,279 @@
     <title>Render</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="Styles/uploading2.css" />
+    <link rel="stylesheet" href="Styles/opret1.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="Libraries/jquery.storage.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
 </head>
+
+<style>
+    .slider {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 10px;
+        border-radius: 5px;
+        background: linear-gradient(to right, rgba(255,0,0,1), rgba(255,255,0,1), rgba(0,255,0,1), rgba(0,255,255,1), rgba(0,0,255,1), rgba(255,0,255,1), rgba(255,0,0,1));
+        outline: none;
+        opacity: 0.9;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
+    }
+
+    .slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 20px; /* Slider handle height */
+    background: rgb(66, 66, 66); /* Green background */
+    border: 3px solid rgb(66, 66, 66);
+    
+    cursor: pointer; /* Cursor on hover */
+    }
+
+    .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    }
+
+    .panel{
+        height: 200;     
+        background-color: rgb(255, 255, 255);
+        max-width: 34rem;
+        min-width: 30rem;
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 3rem;
+        border-radius: 0.5rem;
+        box-shadow: 0.75rem 0.75rem 1.75rem 0 rgba(0, 0, 0, 0.25);
+        margin: 10px;
+    }
+
+    img{
+        width: 140px;
+        height: 140px;
+        padding: 10px;
+    }
+    #cvmain{ background: #ffffff; height: 521px; float: top; margin-top: 10px;margin-bottom: 20px;}
+    #cvtop{background: #732626; height: 80px; text-align: bottom; display: flex; flex-direction: column;}
+    #cvright{background: #f5f5f5; width: 140px; height: 441px; float: right;}
+    #templatemaintitle{background:#00000000; color: #e2e2e2; height: 55px; font-size: xx-large; padding: 4px; padding-top: 20px;} 
+    #templatetitle{background:#ffffff00; color: #e2e2e2; height: 25px; padding-left: 5px;}
+    #lip{background:#ffffff4f; height: 5px; }
+    #section{padding-right: 10px; padding-top: 5px; padding-left: 5px; background:#ffffff; color: #363636; font-size: x-small; margin: 0px; height: 116px; width: 244px;}
+    .sectiontitle{background:#ffffff00; height: 20px;color: #732626;padding-top: 5px;padding-left: 5px;font-weight: bolder; font-size: small;}
+    .bottomlip{background: #732626; height: 1px; margin-left: 5px; width: 230px;}
+    .bottomlip2{background: #732626; height: 1px; margin-left: 5px; width: 126px; margin-bottom: 10px;}
+    .infobox{background: #2113df00; color: #363636;width: 140px; height: 15px;margin-left: 10px; font-size: 11px; font-weight: bold;}
+    .infotext{background: #13df2400; color: #363636; width: 140px; height: 20px;margin-left: 10px; font-size: 10px;}
+
+</style>
 
 <body>
 
-    <div class="image-container">
-        <img src="insert" alt="Red dot" id="base64image" class="base64image">
-    </div>
+    <div class="container">
+        <div class="panel">
+            <div class="panel-header">
+                <h1 class="panel-header-title" id="colorTitle">Vælg Farve</h1>
+                <input type="range" id="rangeHue" min="0" max="360" value="0" class="slider" >
+            </div>
 
-    <script>
-        var croppedImgBase64 = $.sessionStorage('croppedImgBase64'); // Getting image from cache/storage
-        $("#base64image").attr("src", croppedImgBase64); // Setting base64 as <img> source
-    </script>
+            <div id="cvmain">
+                <div id="cvtop">
+                    <div id="templatemaintitle">Name</div>
+                    <div id="templatetitle">Short title</div>
+                    <div id="lip"></div>
+                </div>
+                
+                <div id="cvright">
+                    <div class="image-container">
+                        <img src="insert"  alt="Red dot" id="base64image" class="base64image">
 
+                    </div>
+                    <div class="sectiontitle" id="sectiontitle4">Personal Info</div>
+                    <div class="bottomlip2" id="bottomlip4"></div>
+                    <div class="infobox">Address</div>
+                    <div class="infotext">N/A</div>
+                    <div class="infobox">Phone</div>
+                    <div class="infotext">12 34 56 78</div>
+                    <div class="infobox">E-Mail</div>
+                    <div class="infotext">Name@template.com</div>
+                    <div class="infobox">Age</div>
+                    <div class="infotext">N/A</div>
+                    <div class="infobox">LinkedIn</div>
+                    <div class="infotext">LinkedIn.com/LINK</div>
+
+
+                </div>
+                <div>
+                    <div class="sectiontitle" id="sectiontitle1">Section</div>
+                    <div class="bottomlip" id="bottomlip1"></div>
+                    <div id="section">
+                        
+                        ◆ Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <br>
+                        ◆ Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit.
+                        <br>
+                        ◆ Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.
+                    </div>
+                </div>
+                <div>
+                    <div class="sectiontitle" id="sectiontitle2">Section</div>
+                    <div class="bottomlip" id="bottomlip2"></div>
+                    <div id="section">
+                        
+                        ◆ Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <br>
+                        ◆ Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit.
+                        <br>
+                        ◆ Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.
+                    </div>
+                </div>
+                <div>
+                    <div class="sectiontitle" id="sectiontitle3">Section</div>
+                    <div class="bottomlip" id="bottomlip3"></div>
+                    <div id="section">
+                        
+                        ◆ Lorem ipsum dolor sit amet - consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <br>
+                        ◆ Vestibulum gravida - nulla sit amet odio porttitor, sed commodo sem vulputate. Sed eleifend mauris ac felis vulputate hendrerit.
+                        <br>
+                        ◆ Phasellus gravida - finibus felis vitae sagittis. Nunc in velit vehicula orci rutrum interdum in ut dui. Mauris nec dolor mi.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="input">
+                <!-- <a class="input-submit" href="upload.html" class="button" onclick ="myFunction()">Videre</a> -->
+                <button class="input-submit" onclick="demoFromHTML()">Download PDF</button>
+                <!--<a href="javascript:genPDF()">Download PDF</a>-->
+            </div>
+        </div>
+    </div> 
 
 
 
 </body>
+
+<script>
+    var croppedImgBase64 = $.sessionStorage('croppedImgBase64'); // Getting image from cache/storage
+    $("#base64image").attr("src", croppedImgBase64); // Setting base64 as <img> source
+
+    function myFunction() {
+        //console.log("pdf test 1");
+        /*
+        var navn = document.getElementById("name").value;
+        var mail = document.getElementById("mail").value;
+        var phone = document.getElementById("phone").value;
+        var adress = document.getElementById("adress").value;
+        var postal = document.getElementById("postal").value;
+        var by = document.getElementById("demo").value;
+
+        console.log(navn);
+        console.log(mail);
+        console.log(phone);
+        console.log(adress);
+        console.log(postal);
+        console.log(by);
+        
+        demoFromHTML(1, 2, 3, 4, 5, 6);
+        */
+    }
+    
+
+    //function demoFromHTML(_navn, _mail, _phone, _adress, _postal, _by) {
+    function demoFromHTML() {    
+        var doc = new jsPDF();
+        doc.setTextColor(255,0,0);
+        doc.text(10,10,'hue: '+ document.getElementById('rangeHue').value);
+        doc.text(10,20,'color: ');
+        doc.text(10,30,'_phone');
+        doc.text(10,40,'_adress');
+        doc.text(10,50,'_postal');
+        doc.text(10,60,'_by');
+        doc.save("test.pdf");
+        //console.log("pdf test 1");
+    }   
+
+    function changeColor(){   
+        let hue = document.getElementById('rangeHue').value;
+        let color = 'hsl(' + hue + ',70%,70%)';
+        
+        //document.body.style.backgroundColor = hslToRgb(document.getElementById('rangeHue').value/360, 70/100, 70/100);
+        //console.log(document.getElementById('rangeHue').value/360, 70/100, 70/100);
+        rgbColor = hslToRgb(hue/360, 0.5, 0.3);
+        //console.log('red: ' + rgbColor[0]);
+        //console.log('green: ' + rgbColor[1]);
+        //console.log('blue: ' + rgbColor[2]);
+        var newColor = 'rgb('+rgbColor[0]+','+rgbColor[1]+','+rgbColor[2]+')';
+        //document.getElementById('colorTitle').style.backgroundColor = newColor;
+        document.getElementById('cvtop').style.background = newColor;
+        document.getElementById('bottomlip1').style.background = newColor;
+        document.getElementById('bottomlip2').style.background = newColor;
+        document.getElementById('bottomlip3').style.background = newColor;
+        document.getElementById('bottomlip4').style.background = newColor;
+        document.getElementById('sectiontitle1').style.color = newColor;
+        document.getElementById('sectiontitle2').style.color = newColor;
+        document.getElementById('sectiontitle3').style.color = newColor;
+        document.getElementById('sectiontitle4').style.color = newColor;
+    }
+
+    function hslToRgb(h, s, l){
+        var r, g, b;
+
+        if(s == 0){
+            r = g = b = l; // achromatic
+        }else{
+            var hue2rgb = function hue2rgb(p, q, t){
+                if(t < 0) t += 1;
+                if(t > 1) t -= 1;
+                if(t < 1/6) return p + (q - p) * 6 * t;
+                if(t < 1/2) return q;
+                if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+                return p;
+            }
+
+            var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+            var p = 2 * l - q;
+            r = hue2rgb(p, q, h + 1/3);
+            g = hue2rgb(p, q, h);
+            b = hue2rgb(p, q, h - 1/3);
+        }
+
+        return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    }
+
+    document.getElementById('rangeHue').addEventListener('input',changeColor);
+
+    
+
+    /*
+    var slider = document.getElementById("myRange");
+    var output = document.getElementById("demo2");
+    var hue = document.getElementById("demo3");
+    //hue = slider.value;
+    output.innerHTML = slider.value;
+    hue.innerHTML = slider.value;
+    
+    
+    
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+      hue.innerHTML = this.value;
+      var huecolor = hsv2rgb(slider.value, 100, 50);
+      output.style.color = "#"+(slider.value).toString(16)+(slider.value).toString(16)+(slider.value).toString(16);
+
+    }
+    function hsv2rgb(h,s,v) 
+      {                              
+      let f= (n,k=(n+h/60)%6) => v - v*s*Math.max( Math.min(k,4-k,1), 0);     
+      return [f(5),f(3),f(1)];       
+      }
+      */
+
+</script>
+
 
 </html>
